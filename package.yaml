@@ -1,0 +1,50 @@
+filtetype: package.yml
+
+detect:
+    filename: "package.yml"
+
+rules:
+    # Keys
+    - identifier: "\\b^(name|version|release|source|homepage|license|component|summary|description|setup|build|install|check|profile|builddeps|rundeps|patterns|replaces|environment)\\b"
+    
+    # build flags
+    - identifier.options: "(clang|extract|autodep|emul32|libsplit|optimize|networking|ccache)"
+   
+   # package source
+    - identifier.source:
+        start: "(https|http|git\\|)"
+        end: "$"
+        rules: []
+
+    # Special Characters
+    - symbol.operator: "(:|:[[:space:]]|^[[:space:]]*- |[[:space:]]\\|)"
+
+    # Optimize flags
+    - constant.bool: "\\b(speed|size|no-bind-now|no-symbolic|unroll-loops|runpath|avx256|thin-lto|lto|strip|debug)$(.*?)\\b"
+    - constant.bool: "\\b(YES|Yes|yes|ON|On|on|TRUE|True|true|NO|No|no|OFF|Off|off|FALSE|False|false)$(.*?)\\b"
+
+    # Build Macros
+    - statement.actions: "[%](configure|reconfigure|autogen)"
+    - statement.actions: "[%](make_install|make|cmake)"
+    - statement.actions: "[%](make[[:space:]]check)"
+    - statement.actions: "[%](cmake_ninja|ninja_build|ninja_install|ninja_check)"
+    - statement.actions: "[%](meson_configure|meson_build|meson_install|meson_check)"
+    - statement.actions: "[%](qmake4|qmake|qml_cache)"
+    - statement.actions: "[%](patch|apply_patches)"
+    - statement.actions: "[%](cabal_configure|cabal_build|cabal_install|cabal_register)"
+    - statement.actions: "[%](perl_setup|perl_build|perl_install)"
+    - statement.actions: "[%](python_setup|python_install|python_test|python_compile|python3_setup|python3_install|python3_test|python3_compile)"
+    - statement.actions: "[%](gem_build|gem_install)"
+    - statement.actions: "[%](waf_configure|waf_build|waf_install)"
+    - statement.actions: "[%](llvm_profile_merge|avx2_lib_shift)"
+    - statement.actions: "[$]pkgfiles"
+
+    # install prefixes
+    - statement.prefix: "(%kernel_version_lts%|%libdir%|[$]workdir|[$]PREFIX|%installroot%|[$]{EMUL32BUILD}|[$]EMUL32BUILD|[$]version|[$]{version}|[$]release|[$]{release}|[$]sources|[$]installdir)"
+
+    # Comments
+    - comment:
+        start: "#"
+        end: "$"
+        rules: []
+
