@@ -5,7 +5,9 @@ Syntax highlighting and colorschemes for [Micro Editor](https://github.com/zyedi
 # Installation
 
 for syntax highlighting place the package.yaml in
-'~/config/micro/syntax/'
+
+`~/config/micro/syntax/`
 
 for colorscheme support place the solus.micro in
-'~/.config/micro/colorschemes'
+
+`~/.config/micro/colorschemes`
