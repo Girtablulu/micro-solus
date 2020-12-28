@@ -2,6 +2,8 @@ Syntax highlighting and colorschemes for [Micro Editor](https://github.com/zyedi
 - The syntax is made to work with the [package.yml](https://getsol.us/articles/packaging/package.yml/en/) for Solus which it's unsing for build instructions
 - the colorscheme is based on the default colorscheme of micro with addition to work fully with the package.yaml syntax
 
+![Screenshot](micro-solus.png)
+
 # Installation
 
 ## Syntax
