@@ -8,7 +8,7 @@ rules:
     - identifier: "\\b^(name|version|release|source|homepage|license|component|summary|description|setup|build|install|check|profile|builddeps|rundeps|patterns|replaces|environment)\\b"
     
     # build flags
-    - identifier.options: "(clang|extract|autodep|emul32|libsplit|optimize|networking|ccache)"
+    - identifier.options: "^(clang|extract|autodep|emul32|libsplit|optimize|networking|ccache)"
    
    # package source
     - identifier.source:
