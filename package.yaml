@@ -5,10 +5,10 @@ detect:
 
 rules:
     # Keys
-    - identifier: "\\b^(name|version|release|source|homepage|license|component|summary|description|setup|build|install|check|profile|builddeps|rundeps|patterns|replaces|environment)\\b"
+    - identifier: "\\b^(build|builddeps|check|component|description|environment|homepage|install|license|name|patterns|profile|release|replaces|rundeps|setup|source|summary|version)\\b"
     
     # build flags
-    - identifier.options: "^(clang|extract|autodep|emul32|libsplit|optimize|networking|ccache)"
+    - identifier.options: "^(autodep|ccache|clang|devel|emul32|extract|libsplit|networking|optimize)"
    
    # package source
     - identifier.source:
