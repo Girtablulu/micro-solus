@@ -14,7 +14,7 @@ for syntax highlighting place the package.yaml in
 
 or
 
-`wget -P ~/.config/micro/colorschemes https://raw.githubusercontent.com/Girtablulu/micro-solus/master/solus.micro`
+`wget -P ~/.config/micro/syntax https://raw.githubusercontent.com/Girtablulu/micro-solus/master/package.yaml`
 
 ## Colorscheme
 
@@ -24,4 +24,13 @@ for colorscheme support place the solus.micro in
 
 or
 
-`wget -P ~/.config/micro/syntax https://raw.githubusercontent.com/Girtablulu/micro-solus/master/package.yaml`
+`wget -P ~/.config/micro/colorschemes https://raw.githubusercontent.com/Girtablulu/micro-solus/master/solus.micro`
+
+to use the colorscheme you have to add inside `~/config/micro/settings.json`
+
+```
+{
+    "colorscheme": "solus"
+}
+```
+
